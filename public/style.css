@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Base styles */
+body {
+  background: #eee;
+  font-family: 'Roboto', sans-serif;
+  color: #444;
+  max-width: 960px;
+  margin: 100px auto;
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+.nav-links li {
+  margin-left: 20px;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  background: #36cca2;
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+.nav-links a:hover {
+  background: #2a9d82;
+}
+.nav-links .btn {
+  background-color: #f77f00;
+}
+
+.appTitle{
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #333;
+        transform: translate(350px,0);
+}
+
+
+/* Center content vertically and horizontally */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+}
+
+/* Style for input page */
+
+
+.form-container {
+    width: 350px;
+    height: 180px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 20px 30px;
+    transform: translate(300px,0);
+  }
+  
+  .nameForm{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 15px;
+  }
+  
+  .input {
+    border-radius: 20px;
+    border: 1px solid #c0c0c0;
+    outline: 0 !important;
+    box-sizing: border-box;
+    padding: 12px 15px;
+  }
+  
+  
+  .form-btn {
+    padding: 10px 15px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    border-radius: 20px;
+    border: 0 !important;
+    outline: 0 !important;
+    background: #36cca2;
+    color: white;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+     transition: background-color 0.3s ease;
+  }
+  
+  .form-btn:active {
+    box-shadow: none;
+  }
+
+.form-btn :hover {
+    background-color: #2a9d82;
+}
+form label {
+    font-weight: 500;
+    color: #555;
+}
+
+/* Style for dashboard page */
+table {
+    width: 80%; /* Slightly smaller width to center better */
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+table thead {
+    background-color: #36cca2;
+    color: white;
+}
+
+table thead th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 500;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tbody td {
+    padding: 15px;
+    color: #555;
+}
+
+table tbody td button {
+    background-color: #f77f00;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+table tbody td button:hover {
+    background-color: #e06d00;
+}
+
+button#addButton {
+    background-color: #36cca2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+button#addButton:hover {
+    background-color: #2a9d82;
+}
+
+/* Modal container */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal content box */
+.modal-content {
+    background-color: white;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px; /* For smaller devices */
+    border-radius: 10px;
+    box-shadow: 0px 4px 16px rgba(0,0,0,0.2);
+}
+.modal-input{
+    border-radius: 12px;
+    border: 1px solid #c0c0c0;
+    outline: 0 !important;
+    box-sizing: border-box;
+    padding: 10px 12px;  
+}
+
+/* The Close Button (X) */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Add button inside the modal */
+button[type="submit"] {
+    background-color: #36cca2;
+    color: white;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #2a9d82;
+}
+
+
+.back-button {
+    display: inline-block;
+    background-color: #36cca2;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.back-button:hover {
+    background-color: #2a9d82;
+}
+
+.back-button i {
+    margin-right: 8px; /* Add some space between icon and text */
+}
+
+
+  
+/* Tablet screens (max-width: 992px) */
+@media only screen and (max-width: 992px) {
+    .form-container, table {
+      width: 90%; /* Responsive width for tablets */
+      max-width: 900px; /* Limit the max width for tablets */
+      transform: translate(0, 40px); /* Center horizontally */
+      margin: 0 auto; /* Ensure centering */
+      padding: 10px; /* Keep padding consistent */
+    }
+  
+  }
+  
+  /* Large desktops (min-width: 1200px) */
+  @media only screen and (min-width: 1200px) {
+  .form-container {
+    width: 35%; /* Reduced width for large screens */
+    max-width: 360px; /* Adjusted max-width for better layout */
+    transform: translate(0, 35px); /* No translation needed */
+    margin: 0 auto; /* Center the form */
+    padding: 10px; /* Increase padding for large screens */
+    
+  }
+  
+  }
+  
+  
+  /* Laptops (max-width: 1199px) */
+  @media only screen and (max-width: 1199px) {
+    .form-container {
+      width: 40%; /* Adjust width to 70% for laptops */
+      max-width: 350px; /* Set a max width for better layout */
+      transform: translate(0, 20px); /* Center horizontally */
+      margin: 0 auto; /* Ensure centering */
+      padding: 15px; /* Keep padding comfortable */
+    }
+  
+  }
+  @media only screen and (max-width: 1000px) {
+    .form-container {
+      width: 40%; /* Adjust width to 70% for laptops */
+      max-width: 350px; /* Set a max width for better layout */
+      transform: translate(0, 40px); /* Center horizontally */
+      margin: 0 auto; /* Ensure centering */
+      padding: 15px; /* Keep padding comfortable */
+    }
+  
+  }
+  
+  
+  /* Small screens (max-width: 767px) */
+  @media only screen and (max-width: 767px) {
+    .form-container {
+      width: 100%; /* Make the form container responsive to the screen width */
+      max-width: 350px; /* Set a max-width, but allow it to shrink if needed */
+      margin: 0 auto; /* Center the form horizontally */
+      padding: 15px; /* Add some padding inside */
+      transform: translate(0, 40px); /* Ensure no unwanted transforms */
+    }
+    table{
+      .form-container {
+        width: 100%; /* Make the form container responsive to the screen width */
+        max-width: 350px; /* Set a max-width, but allow it to shrink if needed */
+        margin: 0 auto; /* Center the form horizontally */
+        padding: 15px; /* Add some padding inside */
+        transform: translate(0, 40px); /* Ensure no unwanted transforms */
+    }
+  
+  }
+  
+  /* Smaller screens (max-width: 700px) */
+  @media only screen and (max-width: 700px) {
+    .form-container  {
+      width: 90%; /* Make the form take up most of the screen */
+      max-width: 350px; /* Keep the max-width to prevent it from getting too wide */
+      margin: 0 auto; /* Center it */
+      transform: translate(0, 40px); /* Avoid shifting the form with translate */
+    }
+    table{
+      form-container  {
+        width: 90%; /* Make the form take up most of the screen */
+        max-width: 350px; /* Keep the max-width to prevent it from getting too wide */
+        margin: 0 auto; /* Center it */
+        transform: translate(0, 40px);
+    }
+  
+    
+  }

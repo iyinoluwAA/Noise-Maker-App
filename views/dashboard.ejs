@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noise Makers Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <%- include('nav.ejs') %>
+    <section>
+         <!-- Add Button to trigger the modal -->
+    <button id="addButton"><i class="fas fa-plus-circle"></i>Add Noise Maker</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date Added</th>
+                    <th>Action</th> <!-- Action column for Delete button -->
+                </tr>
+            </thead>
+            <tbody>
+                <% noiseMakers.forEach(function(noiseMaker, index) { %>
+                    <td>
+                        <td><%= noiseMaker.name %></td>
+                        <td><%= noiseMaker.date %></td>
+                         <td>
+                            <form action="/delete/<%= index %>" method="POST">
+                                <button type="submit"><i class="fas fa-trash-alt"></i> Delete</button>
+                            </form>
+                         </td>
+                     </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+            
+            <a href="/" class="back-button"><i class="fas fa-arrow-circle-left"></i>Back to Input</a>
+        </section>
+
+    <!-- Modal for Adding Noise Maker -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add a Noise Maker</h2>
+            <form action="/add" method="POST">
+                <label for="name">Noise Maker Name:</label>
+                <input class="modal-input" type="text" id="name" name="name" placeholder="Enter Noise Maker name " required>
+                <button type="submit"><i class="fas fa-plus-circle"></i>Add Name</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/modal.js"></script>
+</body>
+</html>
